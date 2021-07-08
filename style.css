@@ -1,0 +1,54 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+/* Mempersiapkan layar */
+#screen {
+  height: 400px;
+  width: 700px;
+  border: 2px solid black;
+}
+
+#chara {
+  height: 100px;
+  width: 50px;
+  background: #777;
+  position: relative;
+  top: 250px;
+  left: 100px;
+}
+.jumping {
+  animation: chara_jump 500ms;
+}
+
+@keyframes chara_jump {
+  0% {
+    top: 250px;
+  }
+  50% {
+    top: 150px;
+  }
+  100% {
+    top: 250px;
+  }
+}
+
+/* Mengatur block-nya */
+#block {
+  height: 50px;
+  width: 50px;
+  background: blue;
+  position: relative;
+  top: 350px;
+  animation: block_move 1000ms infinite linear;
+}
+
+@keyframes block_move {
+  from {
+    left: 650px;
+  }
+  to {
+    left: 0px;
+  }
+} ;
