@@ -11,6 +11,8 @@ core.addEventListener("click", jump);
 function jump() {
   chara.classList.add("jumping");
   core.removeEventListener("click", jump);
+
+  //Menghapus kondisi jumping dan membuat komando ulang
   setTimeout(() => {
     chara.classList.remove("jumping");
     core.addEventListener("click", jump);
@@ -38,7 +40,9 @@ function lose() {
     block_left <= chara_position + 50
   ) {
     game_over();
-  } else {
+  }
+  //Terdapat penambahan skor
+  else {
     counter++;
     score.innerText = "score = " + counter;
   }
@@ -68,3 +72,21 @@ function game_over() {
 setInterval(() => {
   lose();
 }, 10);
+
+//Pergantian frame karakter
+var shift_walk = 0;
+setInterval(() => {
+  shift_walk++;
+  if (shift_walk % 2 == 0) {
+    chara.style.backgroundImage = "url('img/Front_Walk_01.png')";
+  } else {
+    chara.style.backgroundImage = "url('img/Front_Walk_02.png')";
+  }
+}, 250);
+
+//Menambahkan speed balok
+var speed_block = 1000;
+setInterval(() => {
+  block.style.animation = "block_move " + speed_block + "ms infinite linear";
+  speed_block -= 5;
+}, 1000);

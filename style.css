@@ -23,7 +23,8 @@ header {
 #chara {
   height: 100px;
   width: 50px;
-  background: #777;
+  background-image: url("img/Front_Walk_02.png");
+  background-size: cover;
   position: relative;
   top: 250px;
   left: 100px;
@@ -35,12 +36,14 @@ header {
 @keyframes chara_jump {
   0% {
     top: 250px;
+    background-image: url("img/Front_Jump.png");
   }
   50% {
     top: 100px;
   }
   100% {
     top: 250px;
+    background-image: url("img/Front_Jump.png");
   }
 }
 
@@ -84,9 +87,5 @@ header {
 
   #chara {
     left: 50px;
-  }
-
-  #block {
-    animation: block_move 1000ms infinite linear;
   }
 }
