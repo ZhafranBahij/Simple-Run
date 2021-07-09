@@ -3,8 +3,18 @@
   margin: 0%;
 }
 
+body {
+  display: grid;
+  justify-items: center;
+}
+
+header {
+  text-align: center;
+}
+
 /* Mempersiapkan layar */
 #screen {
+  margin-top: 20px;
   height: 400px;
   width: 700px;
   border: 2px solid black;
@@ -19,7 +29,7 @@
   left: 100px;
 }
 .jumping {
-  animation: chara_jump 500ms;
+  animation: chara_jump 700ms;
 }
 
 @keyframes chara_jump {
@@ -27,7 +37,7 @@
     top: 250px;
   }
   50% {
-    top: 150px;
+    top: 100px;
   }
   100% {
     top: 250px;
@@ -51,4 +61,32 @@
   to {
     left: 0px;
   }
-} ;
+}
+
+/* Layar kecil */
+@media screen and (max-width: 700px) {
+  header h1 {
+    text-align: center;
+  }
+
+  #screen {
+    width: 475px;
+  }
+
+  @keyframes block_move {
+    from {
+      left: 475px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+
+  #chara {
+    left: 50px;
+  }
+
+  #block {
+    animation: block_move 1000ms infinite linear;
+  }
+}
